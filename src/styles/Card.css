@@ -1,0 +1,80 @@
+/* Variables de colores */
+:root {
+  --btn-color: #1da1f2;
+  --btn-hover-color: #0d8ddb;
+  --btn-color-delete: #e0245e;
+  --btn-hover-color-delete: #d11e4a;
+}
+
+.user-card {
+  background-color: #242424;
+  border: 1px solid lightslategray;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 300px;
+  margin-top: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Usuario */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Botones */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.follow-btn,
+.delete-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.follow-btn {
+  background-color: var(--btn-color);
+  color: white;
+  border-radius: 30px;
+}
+
+.delete-btn {
+  background-color: var(--btn-color-delete);
+  color: white;
+  border-radius: 30px;
+}
+
+.follow-btn:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.delete-btn:hover {
+  background-color: var(--btn-hover-color-delete);
+}
