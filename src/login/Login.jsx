@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/Login.css";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,8 @@ export default function Login() {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   // Forms function
   const handleChange = (e) => {
     setFormData({
@@ -23,8 +25,8 @@ export default function Login() {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!formData.name) {
-      newErrors.name = "El nombre es obligatorio";
+    if (!formData.user) {
+      newErrors.user = "El nombre es obligatorio";
     }
 
     if (!formData.password) {
@@ -41,6 +43,7 @@ export default function Login() {
 
     if (validateForm()) {
       alert("Usuario y contraseña correctos");
+      navigate("/wall");
     } else {
       alert("Usuario y/o contraseña incorrectos");
     }
@@ -48,6 +51,9 @@ export default function Login() {
 
   return (
     <>
+      <Link to="/" className="img-app">
+        <img src="/src/img/logo-world.gif" alt="logo-app" />
+      </Link>
       <h1>Social App Login</h1>
 
       <div className="container-login">
@@ -58,11 +64,9 @@ export default function Login() {
             id="user"
             name="user"
             placeholder="Username"
-            value={formData.name}
+            value={formData.user}
             onChange={handleChange}
           />
-
-          {/* {errors.user && <p>{errors.user}</p>} */}
 
           <br />
           <br />
@@ -77,15 +81,15 @@ export default function Login() {
             onChange={handleChange}
           />
 
-          {/* {errors.password && <p>{errors.password}</p>} */}
-
           <br />
           <br />
 
           <p>
             If you don´t have account, please click{" "}
             <span>
-              <a href="/">here</a>
+              <Link to="/sign" className="link-home">
+                here
+              </Link>
             </span>
           </p>
 
