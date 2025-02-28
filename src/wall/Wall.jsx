@@ -1,6 +1,7 @@
+import styles from "./Wall.module.css";
 // import { useState } from "react";
-// import Card from "./Card";
-// import Post from "./Post";
+import Card from "../card/Card";
+import Post from "../postUser/Post";
 // import CardFriend from "./CardFriend";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
@@ -14,33 +15,39 @@ export default function Wall() {
   };
 
   return (
-    <div className="container-wall">
+    <div className={styles["container-wall"]}>
       <header>
         <h1>Social App</h1>
         <FontAwesomeIcon
           icon={faRightFromBracket}
-          id="logout-btn"
+          className={styles["logout-btn"]}
           onClick={handleClick}
         />
       </header>
 
-      <div className="main-container">
+      <div className={styles["main-container"]}>
         {/* Sidebar de amigos */}
-        <aside className="sidebar">
+        <aside className={styles["sidebar-left"]}>
           <h3>Friends</h3>
-          <ul>{/* <CardFriend /> */}</ul>
+          <div className={styles["all-friends"]}>
+            <Card />
+          </div>
         </aside>
 
         {/* Feed de publicaciones */}
-        <div className="feed">
+        <div className={styles["feed"]}>
           <h3>What’s happening?</h3>
-          <div className="post">{/* <Post /> */}</div>
+          <div className={styles["all-posts"]}>
+            <Post />
+          </div>
         </div>
 
         {/* Sección How to follow */}
-        <aside>
+        <aside className={styles["sidebar-right"]}>
           <h3>How to follow</h3>
-          <div className="all-users">{/* <Card /> */}</div>
+          <div className={styles["all-users"]}>
+            <Card />
+          </div>
         </aside>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { Route, Routes, Link } from "react-router-dom";
 import Login from "./login/Login";
 import Sign from "./sign/Sign";
@@ -10,25 +10,26 @@ function App() {
       <Route
         path="/"
         element={
-          <div className="main-content">
-            <div className="logo-container">
+          <div className={styles["main-content"]}>
+            <div className={styles["logo-container"]}>
               <img
                 src="/src/img/logo-world.gif"
                 alt="logo-app-social"
-                className="logo"
+                className={styles["logo"]}
               />
             </div>
-            <div className="content-right">
-              <h1 className="header-title">
+
+            <div className={styles["content-right"]}>
+              <h1 className={styles["header-title"]}>
                 No te pierdas lo que está pasando alrededor del mundo
               </h1>
 
-              <Link to="/login" className="links">
-                <button className="buttons">Login</button>
+              <Link to="/login" className={styles["links"]}>
+                <button className={styles["buttons"]}>Login</button>
               </Link>
 
-              <Link to="/sign" className="links">
-                <button className="buttons">Sign in</button>
+              <Link to="/sign" className={styles["links"]}>
+                <button className={styles["buttons"]}>Sign in</button>
               </Link>
             </div>
           </div>

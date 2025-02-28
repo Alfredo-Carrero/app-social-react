@@ -1,3 +1,4 @@
+import styles from "./Card.module.css";
 import { useState, useEffect } from "react";
 import { fetchUsers } from "../api/fetch";
 
@@ -33,42 +34,40 @@ export default function Card() {
 
   return (
     <>
-      <div className="user-card">
-        {users.map((user) => {
-          return (
-            <div className="user-card" key={user.id}>
-              <div className="user-info">
-                <img
-                  src="/src/img/user.png"
-                  alt="user-img"
-                  className="user-img"
-                />
-                <span className="username">{user.first_name}</span>
-              </div>
-
-              <div className="buttons">
-                <button
-                  className="follow-btn"
-                  onClick={() => {
-                    followHandleClick(user.id);
-                  }}
-                >
-                  Follow
-                </button>
-
-                <button
-                  className="delete-btn"
-                  onClick={() => {
-                    deleteHandleClick(user.id);
-                  }}
-                >
-                  Delete
-                </button>
-              </div>
+      {users.map((user) => {
+        return (
+          <div className={styles["user-card"]} key={user.id}>
+            <div className={styles["user-info"]}>
+              <img
+                src="/src/img/user.png"
+                alt="user-img"
+                className={styles["user-img"]}
+              />
+              <span className="username">{user.first_name}</span>
             </div>
-          );
-        })}
-      </div>
+
+            <div className={styles["buttons"]}>
+              <button
+                className={styles["follow-btn"]}
+                onClick={() => {
+                  followHandleClick(user.id);
+                }}
+              >
+                Follow
+              </button>
+
+              <button
+                className={styles["delete-btn"]}
+                onClick={() => {
+                  deleteHandleClick(user.id);
+                }}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        );
+      })}
     </>
   );
 }

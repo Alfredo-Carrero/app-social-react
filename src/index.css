@@ -7,12 +7,16 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #000;
 
+  --btn-color: #1da1f2;
+  --btn-hover-color: #0d8ddb;
+  --btn-color-delete: #e0245e;
+  --btn-hover-color-delete: #d11e4a;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 @media (prefers-color-scheme: light) {
   a:hover {

@@ -1,3 +1,4 @@
+import styles from "./CardFriend.module.css";
 import { useState, useEffect } from "react";
 import { fetchUsers } from "../api/fetch";
 

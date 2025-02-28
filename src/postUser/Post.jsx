@@ -1,3 +1,4 @@
+import styles from "./Post.module.css";
 import { fetchPosts } from "../api/fetch";
 import { useState, useEffect } from "react";
 
@@ -9,8 +10,9 @@ export default function Post() {
     // Fetch con los posts cuando se renderiza el componente
     const loadData = async () => {
       const postsData = await fetchPosts();
+      const limitedPosts = postsData.slice(0, 5);
 
-      setPosts(postsData);
+      setPosts(limitedPosts);
 
       // Finaliza la carga
       setLoading(false);
@@ -25,16 +27,24 @@ export default function Post() {
 
   return (
     <>
-      <div className="posts-container">
-        {posts.map((post) => {
-          return (
-            <div className="post" key={post.id}>
+      {posts.map((post) => {
+        return (
+          <div className={styles["post"]} key={post.id}>
+            <div className={styles["post-header"]}>
+              <h3 className={styles["username"]}>User {post.userId}</h3>
+              <img
+                src="/src/img/user.png"
+                alt="user-img"
+                className={styles["user-img"]}
+              />
+            </div>
+            <div className={styles["post-content"]}>
               <h3>{post.title}</h3>
               <p>{post.body}</p>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </>
   );
 }
