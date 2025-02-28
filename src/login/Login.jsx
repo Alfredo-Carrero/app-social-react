@@ -43,44 +43,47 @@ export default function Login() {
     e.preventDefault();
 
     if (validateForm()) {
-      alert("Usuario y contraseña correctos");
       navigate("/wall");
-    } else {
-      alert("Usuario y/o contraseña incorrectos");
     }
   };
 
   return (
     <>
-      <Link to="/" className="img-app">
-        <img src="/src/img/logo-world.gif" alt="logo-app" />
-      </Link>
-      <h1>Social App Login</h1>
+      <div className={styles["container-login"]}>
+        <Link to="/" className="img-app">
+          <img src="/src/img/logo-world.gif" alt="logo-app" />
+        </Link>
 
-      <div className="container-login">
-        <form onSubmit={handleSubmit} id="login-form">
+        <h1>Social App Login</h1>
+
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
-            className="user"
-            id="user"
+            className={styles["inputs"]}
             name="user"
             placeholder="Username"
             value={formData.user}
             onChange={handleChange}
           />
 
+          {errors.user && (
+            <span className={styles["styles-error"]}>{errors.user}</span>
+          )}
+
           <br />
           <br />
 
           <input
             type="password"
-            className="password"
-            id="password"
+            className={styles["inputs"]}
             placeholder="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
           />
+          {errors.password && (
+            <span className={styles["styles-error"]}>{errors.password}</span>
+          )}
 
           <br />
           <br />
@@ -97,7 +100,7 @@ export default function Login() {
           <input
             type="submit"
             value="Log in"
-            className="login"
+            className={styles["login-btn"]}
             id="login-btn"
           />
         </form>

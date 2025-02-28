@@ -17,6 +17,10 @@ header {
   font-size: 1.5rem;
 }
 
+.logout-btn:hover {
+  color: var(--btn-color-delete);
+}
+
 /* Main container */
 .main-container {
   display: flex;
@@ -27,7 +31,6 @@ header {
 /* Sidebar de la izquierda (Amigos) */
 .sidebar-left {
   width: 25%;
-
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

@@ -4,7 +4,7 @@ import Login from "./login/Login";
 import Sign from "./sign/Sign";
 import Wall from "./wall/Wall";
 
-function App() {
+export default function App() {
   return (
     <Routes>
       <Route
@@ -35,12 +35,32 @@ function App() {
           </div>
         }
       />
-      <Route path="/app/*" element={<App />} />
-      <Route path="/login/*" element={<Login />} />
-      <Route path="/sign/*" element={<Sign />} />
+      <Route
+        path="/app/*"
+        element={
+          <div className={styles["centered-content"]}>
+            <App />
+          </div>
+        }
+      />
+      <Route
+        path="/login/*"
+        element={
+          <div className={styles["centered-content"]}>
+            <Login />
+          </div>
+        }
+      />
+
+      <Route
+        path="/sign/*"
+        element={
+          <div className={styles["centered-content"]}>
+            <Sign />
+          </div>
+        }
+      />
       <Route path="/wall" element={<Wall />} />
     </Routes>
   );
 }
-
-export default App;

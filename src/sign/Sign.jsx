@@ -9,12 +9,6 @@ export default function Sign() {
     password: "",
   });
 
-  const [errors, setErrors] = useState({
-    user: "",
-    email: "",
-    password: "",
-  });
-
   const navigate = useNavigate();
 
   // Sign functions
@@ -40,8 +34,6 @@ export default function Sign() {
       newErrors.password = "La contraseña es obligatoria";
     }
 
-    setErrors(newErrors);
-
     return Object.keys(newErrors).length === 0;
   };
 
@@ -49,30 +41,27 @@ export default function Sign() {
     e.preventDefault();
 
     if (validateForm()) {
-      alert("Usuario, email y contraseña correctos");
       navigate("/wall");
-    } else {
-      alert("Usuario, email y/o contraseña incorrectos");
     }
   };
 
   return (
     <>
-      <Link to="/" className="img-app">
-        <img src="/src/img/logo-world.gif" alt="logo-app" />
-      </Link>
+      <div className={styles["container-sign"]}>
+        <Link to="/" className="img-app">
+          <img src="/src/img/logo-world.gif" alt="logo-app" />
+        </Link>
 
-      <h1>Social App Sign In</h1>
+        <h1>Social App Sign In</h1>
 
-      <div className="container-sign">
         <form action="main.html" name="sign-form" onSubmit={handleSubmit}>
           <input
             type="text"
             name="user"
-            className="user-sign"
-            id="user-sign"
+            className={styles["inputs"]}
             placeholder="username"
             onChange={handleChange}
+            required
           />
 
           <br />
@@ -81,10 +70,10 @@ export default function Sign() {
           <input
             type="email"
             name="email"
-            className="email-sign"
-            id="email-sign"
+            className={styles["inputs"]}
             placeholder="email"
             onChange={handleChange}
+            required
           />
 
           <br />
@@ -93,20 +82,20 @@ export default function Sign() {
           <input
             type="password"
             name="password"
-            className="password-sign"
-            id="password-sign"
+            className={styles["inputs"]}
             placeholder="password"
             onChange={handleChange}
+            required
           />
 
           <br />
           <br />
 
-          <p>
+          <p className={styles["p-account"]}>
             I have an{" "}
-            <span>
+            <span className={styles["span-account"]}>
               <Link to="/login" className="link-home">
-                here
+                account
               </Link>
             </span>
           </p>
@@ -114,7 +103,7 @@ export default function Sign() {
           <input
             type="submit"
             value="Sign in"
-            className="sign-btn"
+            className={styles["sign-btn"]}
             id="sign-btn"
           />
         </form>
