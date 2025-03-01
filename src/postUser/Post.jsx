@@ -10,7 +10,7 @@ export default function Post() {
     // Fetch con los posts cuando se renderiza el componente
     const loadData = async () => {
       const postsData = await fetchPosts();
-      const limitedPosts = postsData.slice(0, 5);
+      const limitedPosts = postsData.slice(0,20);
 
       setPosts(limitedPosts);
 
@@ -31,7 +31,7 @@ export default function Post() {
         return (
           <div className={styles["post"]} key={post.id}>
             <div className={styles["post-header"]}>
-              <h3 className={styles["username"]}>User {post.userId}</h3>
+              <h3 className={styles["username"]}>User {post.id}</h3>
               <img
                 src="/src/img/user.png"
                 alt="user-img"

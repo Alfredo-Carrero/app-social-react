@@ -1,45 +1,24 @@
+import PropTypes from "prop-types";
 import styles from "./Card.module.css";
-import { useState, useEffect } from "react";
-import { fetchUsers } from "../api/fetch";
 
-export default function Card() {
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Fetch usuarios y posts cuando se renderiza el componente
-    const loadData = async () => {
-      const usersData = await fetchUsers();
-
-      setUsers(usersData);
-
-      // Finaliza la carga
-      setLoading(false);
-    };
-
-    loadData();
-  }, []);
-
-  const followHandleClick = () => {
-    alert("Ahora sigues a este usuario");
+export default function Card({ usersToFollow, onFollow, onDelete }) {
+  // Llamar a la función onFollow recibida como prop
+  const followHandleClick = (user) => {
+    onFollow(user);
   };
 
-  const deleteHandleClick = () => {
-    alert("Sugerencia eliminada");
+  const deleteHandleClick = (user) => {
+    onDelete(user);
   };
-
-  if (loading) {
-    return <p>Cargando...</p>;
-  }
 
   return (
     <>
-      {users.map((user) => {
+      {usersToFollow.map((user) => {
         return (
           <div className={styles["user-card"]} key={user.id}>
             <div className={styles["user-info"]}>
               <img
-                src="/src/img/user.png"
+                src={user.avatar}
                 alt="user-img"
                 className={styles["user-img"]}
               />
@@ -50,7 +29,7 @@ export default function Card() {
               <button
                 className={styles["follow-btn"]}
                 onClick={() => {
-                  followHandleClick(user.id);
+                  followHandleClick(user);
                 }}
               >
                 Follow
@@ -59,7 +38,7 @@ export default function Card() {
               <button
                 className={styles["delete-btn"]}
                 onClick={() => {
-                  deleteHandleClick(user.id);
+                  deleteHandleClick(user);
                 }}
               >
                 Delete
@@ -71,3 +50,10 @@ export default function Card() {
     </>
   );
 }
+
+// Validación de Props
+Card.propTypes = {
+  usersToFollow: PropTypes.array.isRequired, // usersToFollow debe ser un array
+  onFollow: PropTypes.func.isRequired, // onFollow debe ser una función
+  onDelete: PropTypes.func.isRequired, // onDelete debe ser una función
+};

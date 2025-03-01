@@ -39,3 +39,42 @@
 .styles-error {
   color: var(--btn-hover-color-delete);
 }
+
+/* RESPONSIVE */
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
+  .container-login {
+    padding: 40px;
+    margin-top: 30px;
+  }
+
+  .inputs {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .container-login {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .inputs {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}

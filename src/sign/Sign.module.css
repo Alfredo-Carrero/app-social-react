@@ -45,3 +45,52 @@
 .span-account {
   margin-left: 6px;
 }
+
+/* RESPONSIVE */
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
+  .container-sign {
+    padding: 40px;
+    margin-top: 30px;
+  }
+
+  .inputs {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .sign-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .p-account {
+    font-size: 14px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .container-sign {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .inputs {
+    width: 90%;
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .sign-btn {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  .p-account {
+    font-size: 12px;
+  }
+}
