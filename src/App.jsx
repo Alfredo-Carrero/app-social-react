@@ -13,7 +13,7 @@ export default function App() {
           <div className={styles["main-content"]}>
             <div className={styles["logo-container"]}>
               <img
-                src="../public/img/logo-world.gif"
+                src="/img/logo-world.gif"
                 alt="logo-app-social"
                 className={styles["logo"]}
               />

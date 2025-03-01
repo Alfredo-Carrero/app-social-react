@@ -51,7 +51,7 @@ export default function Login() {
     <>
       <div className={styles["container-login"]}>
         <Link to="/" className="img-app">
-          <img src="../public/img/logo-world.gif" alt="logo-app" />
+          <img src="/img/logo-world.gif" alt="logo-app" />
         </Link>
 
         <h1>Social App Login</h1>

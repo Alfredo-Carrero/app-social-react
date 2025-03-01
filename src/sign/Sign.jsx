@@ -49,7 +49,7 @@ export default function Sign() {
     <>
       <div className={styles["container-sign"]}>
         <Link to="/" className="img-app">
-          <img src="../public/img/logo-world.gif" alt="logo-app" />
+          <img src="/img/logo-world.gif" alt="logo-app" />
         </Link>
 
         <h1>Social App Sign In</h1>
