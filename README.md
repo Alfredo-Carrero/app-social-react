@@ -58,7 +58,7 @@ Este proyecto fue desarrollado utilizando las siguientes tecnologías:
 ## Notas
 
 - **Este proyecto es solo una simulación** y no tiene ninguna conexión con una red social real.
-- El propósito principal de la aplicación es practicar con las herramientas mencionadas (HTML, CSS y Vanilla JavaScript).
+- El propósito principal de la aplicación es practicar con las herramientas mencionadas (Vanilla JavaScript, Vite y React).
 
 
 Currently, two official plugins are available:
