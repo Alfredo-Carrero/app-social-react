@@ -1,6 +1,7 @@
-# Social App JavaScript
+# Social App React + Vite
 
 Este proyecto es una **simulación de una red social**, similar a la plataforma X. Está diseñado para practicar con **Vanilla JavaScript**, **Vite** y **React** y tiene como objetivo mostrar una serie de características típicas de redes sociales, como la gestión de usuarios, publicaciones y la interacción básica entre ellos.
+Puedes echarle un vistazo en (https://app-social-react.vercel.app/).
 
 ## Características Principales
 
